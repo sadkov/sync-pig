@@ -14,7 +14,7 @@ then
 
     #creating backup folder
     cmd="echo $exitcode $nodebug"; eval $cmd
-    cmd="echo \"we are going to create $destination to store $tmpfile\" $nodebug"; eval $cmd
+    cmd="echo \"we are going to create $destination to store backup files\" $nodebug"; eval $cmd
     mkdir $destination
     # mkdir -p $destination      # this is more flexible but need more attention to value
     exitcode=$?
@@ -63,7 +63,7 @@ do
         exitcode=$?
         if [ $exitcode -ne 0 ]
         then
-                echo "copy $folders from $each_host coplete with error, see $destination/$each_host.report.txt"
+                echo "copy $folders from $each_host complete with error, see $destination/$each_host.report.txt"
                 echo "lets try on next host"
         else
                 cmd="echo copy $folders from $each_host complete with success $nodebug"; eval $cmd

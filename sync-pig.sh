@@ -3,7 +3,7 @@
 nodebug=""
 nodebug=" >/dev/null"
 
-folder=$1
+folder=`echo $1 | tr -cd "[:alpha:][:digit:]_-" | sed -rn 's/(.{1,50}).*/\1/p'`
 hosts="t1 t2"
 master_host="master"
 destination="pig-backups"
